@@ -1,0 +1,11 @@
+[
+  {
+    "Id": 1,
+    "MedicineId": 1,
+    "MedicineName": "Paracetamol 500mg",
+    "QuantitySold": 5,
+    "UnitPrice": 45.50,
+    "TotalAmount": 227.50,
+    "SaleDate": "2026-10-21T17:10:11.5519118+05:30"
+  }
+]

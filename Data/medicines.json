@@ -1,0 +1,29 @@
+[
+  {
+    "Id": 1,
+    "FullName": "Paracetamol 500mg",
+    "Notes": "For demonstration purposes",
+    "ExpiryDate": "2026-11-05T00:00:00",
+    "Quantity": 20,
+    "Price": 45.50,
+    "Brand": "ABC Pharma"
+  },
+  {
+    "Id": 2,
+    "FullName": "Vitamin C 500mg",
+    "Notes": "Keep in a cool, dry place",
+    "ExpiryDate": "2027-08-15T00:00:00",
+    "Quantity": 5,
+    "Price": 120.00,
+    "Brand": "HealthPlus"
+  },
+  {
+    "Id": 3,
+    "FullName": "Cetirizine",
+    "Notes": "nxbcnxb",
+    "ExpiryDate": "2027-06-30T00:00:00",
+    "Quantity": 10,
+    "Price": 50,
+    "Brand": "Cetzine"
+  }
+]

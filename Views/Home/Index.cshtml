@@ -1,0 +1,175 @@
+﻿@{
+    ViewData["Title"] = "Medicine Management";
+}
+
+<div class="container mt-4">
+    <h2>Medicine Management System</h2>
+    <p class="text-muted">
+        Manage medicine inventory and record sales.
+    </p>
+
+    <div id="message" class="alert d-none"></div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h4>Add Medicine</h4>
+
+            <form id="medicineForm">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="fullName" class="form-label">
+                            Medicine Name
+                        </label>
+                        <input id="fullName" class="form-control"
+                               maxlength="150" required />
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="brand" class="form-label">Brand</label>
+                        <input id="brand" class="form-control"
+                               maxlength="100" required />
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="expiryDate" class="form-label">
+                            Expiry Date
+                        </label>
+                        <input id="expiryDate" type="date"
+                               class="form-control" required />
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="quantity" class="form-label">
+                            Quantity
+                        </label>
+                        <input id="quantity" type="number" min="0"
+                               step="1" class="form-control" required />
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="price" class="form-label">
+                            Price
+                        </label>
+                        <input id="price" type="number" min="0"
+                               step="0.01" class="form-control" required />
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="notes" class="form-label">Notes</label>
+                        <input id="notes" class="form-control" />
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3">
+                    Save Medicine
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h4>Medicine Inventory</h4>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <input id="searchInput" class="form-control"
+                           placeholder="Search medicine by name..." />
+                </div>
+                <div class="col-md-6 mt-2 mt-md-0">
+                    <span class="badge bg-danger">
+                        Expiring in less than 30 days
+                    </span>
+                    <span class="badge bg-warning text-dark">
+                        Stock below 10
+                    </span>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Medicine Name</th>
+                            <th>Brand</th>
+                            <th>Expiry Date</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="medicineTableBody">
+                        <tr>
+                            <td colspan="7">Loading medicines...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h4>Record Medicine Sale</h4>
+
+            <form id="saleForm">
+                <div class="row g-3">
+                    <div class="col-md-5">
+                        <label for="saleMedicineId" class="form-label">
+                            Medicine
+                        </label>
+                        <select id="saleMedicineId" class="form-select"
+                                required>
+                            <option value="">Select medicine</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="saleQuantity" class="form-label">
+                            Quantity Sold
+                        </label>
+                        <input id="saleQuantity" type="number" min="1"
+                               step="1" class="form-control" required />
+                    </div>
+
+                    <div class="col-md-4 d-flex align-items-end">
+                        <button type="submit" class="btn btn-success">
+                            Record Sale
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h4>Sales History</h4>
+
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Sale ID</th>
+                            <th>Medicine</th>
+                            <th>Quantity Sold</th>
+                            <th>Unit Price</th>
+                            <th>Total Amount</th>
+                            <th>Sale Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="salesTableBody">
+                        <tr>
+                            <td colspan="6">Loading sales...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/medicine.js" asp-append-version="true"></script>
+}
